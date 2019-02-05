@@ -60,7 +60,12 @@
                                                                   <li><a href="#">One more separated link</a></li>
                                                             </ul>
                                                     </li>
-                                            <li><a href="#">CONTACT US</a></li>
+
+                                            <!-- CONTACT MODAL --> 
+                                            <li><a data-toggle="modal" data-target="#myModal">CONTACT US</a></li>
+
+                                           
+
 
                                             <!-- Authentication Links -->
                                             @guest

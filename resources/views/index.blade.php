@@ -200,4 +200,6 @@
 
 </div>
 
+@include('include.modals')
+
 @endsection
