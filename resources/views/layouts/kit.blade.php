@@ -45,7 +45,7 @@
         
                 </div>
                 
-        </body>
+</body>
         
                 <!--   Core JS Files   -->
                 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
