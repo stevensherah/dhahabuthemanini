@@ -8,10 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    
 </head>
 <body>
     <div id="app">
@@ -27,10 +31,10 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
+                    {{-- <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
-                    </a>
+                    </a> --}}
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

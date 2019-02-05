@@ -119,3 +119,7 @@ agency.min.css:5
     color: #FFFFFF;
     background-color: #b19850;
 }
+
+.card .header-primary {
+    background: linear-gradient(60deg, #e4b630, rgb(152, 126, 51));
+}
