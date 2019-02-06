@@ -15,9 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::GET('/', 'PagesController@getIndex');
+Route::GET('/about', 'PagesController@getAbout');
+Route::GET('/blog', 'PagesController@getBlog');
+
+
 
 Route::POST('/', 'SubscribeController@store');
 

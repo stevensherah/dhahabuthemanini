@@ -20,21 +20,10 @@
                             <ul class="nav navbar-nav navbar-right">
                                         <!-- INSERT PAGES -->
                                         <li class="active"><a href="#">HOME</a></li>
-                                        <li><a href="about.html">ABOUT US</a></li>
-                                        <li><a href="#">BLOG</a></li>
-                                        <!-- <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS <b class="caret"></b></a>
-                                                <ul class="dropdown-menu">
-                                                          <li><a href="#">Action</a></li>
-                                                          <li><a href="#">Another action</a></li>
-                                                          <li><a href="#">Something else here</a></li>
-                                                          <li class="divider"></li>
-                                                          <li><a href="#">Separated link</a></li>
-                                                          <li class="divider"></li>
-                                                      <li><a href="#">One more separated link</a></li>
-                                                </ul>
-                                        </li> -->
-                                        <!-- <li class="dropdown">
+                                        <li><a href="/about">ABOUT US</a></li>
+                                        <li><a href="/blog">BLOG</a></li>
+                                       
+                                            {{--  <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">EVENTS <b class="caret"></b></a>
                                                     <ul class="dropdown-menu">
                                                               <li><a href="#">Action</a></li>
@@ -45,7 +34,7 @@
                                                               <li class="divider"></li>
                                                           <li><a href="#">One more separated link</a></li>
                                                     </ul>
-                                            </li> -->
+                                            </li>  --}}
                                             <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs <b class="caret"></b></a>
                                                             <ul class="dropdown-menu">

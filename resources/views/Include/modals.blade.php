@@ -31,9 +31,8 @@
         
                                 <div class="row">
                                 <div class="col-md-4 col-md-offset-4 text-center">
-                                        <button class="btn btn-gold btn-raised">
-                                                        Send Message
-                                        </button>
+                                        <button type="button" class="btn btn-gold btn-raised" data-toggle="tooltip" data-placement="top" title="Send Message">SUBMIT</button>
+
                                 </div>
                                 </div>
                 </form>

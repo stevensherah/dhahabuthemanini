@@ -50,7 +50,7 @@ class SubscribeController extends Controller
             'phone' => 'required'
         ]);
 
-        //Create New message
+        //Create New subscriber
         $subscribe = new subscribe;
         $subscribe->name = $request->input('name');
         $subscribe->email = $request->input('email');
