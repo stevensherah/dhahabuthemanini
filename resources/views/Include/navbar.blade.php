@@ -21,7 +21,7 @@
                                         <!-- INSERT PAGES -->
                                         <li class="active"><a href="#">HOME</a></li>
                                         <li><a href="/about">ABOUT US</a></li>
-                                        <li><a href="/blog">BLOG</a></li>
+                                        <li><a href="/posts">BLOG</a></li>
                                        
                                             {{--  <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">EVENTS <b class="caret"></b></a>

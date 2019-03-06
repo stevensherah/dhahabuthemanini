@@ -117,6 +117,6 @@ class SubscribeController extends Controller
     {
         $subscribes = Subscribe::latest()->get();
 
-        return view('home')->with('subscribes', $subscribes);
+        return view('admin.subscribers')->with('subscribes', $subscribes);
     }
 }

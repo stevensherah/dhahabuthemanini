@@ -13,13 +13,14 @@
                                 <div class="row">
                                                 <div class="col-md-8">
                                                 <h1 class="title">Latest Blog Post</h1>
+                                                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
                                                 <h2 class="post-title">
                                                                 I believe every human has a finite number of heartbeats. I dont intend to waste any of mine.
                                                 </h2>
                                                 <br />
                                                 <a href="#" class="btn btn-gold btn-info btn-lg">Read More</a>
                                                 </div>
-                                                <div class="col-md-3 well">
+                                                {{-- <div class="col-md-3 well">
                                                         <H4 style="color:black">Categories</H4>
                                                         <button class="btn btn-gold btn-xs">Extra Small</button>
                                                         <button class="btn btn-gold btn-xs">Extra Small</button>
@@ -27,7 +28,7 @@
                                                         <button class="btn btn-gold btn-xs">Extra Small</button>
                                                         <button class="btn btn-gold btn-xs">Extra Small</button>
                                                         <button class="btn btn-gold btn-xs">Extra Small</button>                                                  
-                                                </div>
+                                                </div> --}}
                                 </div>
                 </div>
         </div>
@@ -62,6 +63,7 @@
                                                                         </a>
                                                                         
                                                                 </div>  --}}
+                                                                <h1 class="text-center" style="margin-top:-30px">Other Post</h1>
                                                                 <hr>
                                                                 <div class="post-preview">
                                                                         <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
@@ -144,13 +146,13 @@
                                                                 <!-- Pager -->
                                                                 <div class="text-center">
                                                                         <ul class="pagination pagination-warninggit ">
-                                                                                <li><a href="#"><</a></li>
+                                                                                <li><a class="btn btn-gold btn-warning" href="#">< Previous</a></li>
                                                                                 <li><a href="#">1</a></li>
                                                                                 <li><a href="#">2</a></li>
                                                                                 <li class="active"><a href="#">3</a></li>
                                                                                 <li><a href="#">4</a></li>
                                                                                 <li><a href="#">5</a></li>
-                                                                                <li><a href="#">></a></li>
+                                                                                <li><a class="btn btn-gold btn-warning" href="#">Next ></a></li>
                                                                         </ul>
                                                                 </div>
                                                                 </div>

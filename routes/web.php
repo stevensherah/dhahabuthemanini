@@ -20,13 +20,30 @@ Route::GET('/about', 'PagesController@getAbout');
 Route::GET('/blog', 'PagesController@getBlog');
 
 
+// POSTS
+// Route::GET('/posts', 'PostsController@getIndex');
+// Route::resource('/create', 'PostsController@getCreate');
+// Route::GET('/add', 'PostsController@getShow');
+// Route::GET('/posts', 'PostsController@getIndex');
+
+
+
 
 Route::POST('/', 'SubscribeController@store');
+Route::post('/submit', 'MessagesController@submit');
+
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'SubscribeController@getSubscribes')->middleware('auth');
+Route::resource('posts', 'PostsController');
 
+Route::get('/admin', 'AdminController@index')->name('Admin');
+Route::GET('/icons', 'PagesController@getIcons')->middleware('auth');
+Route::GET('/user', 'PagesController@getUser')->middleware('auth');
+Route::GET('/messages', 'messagesController@getMessages')->middleware('auth');
+
+
+
+Route::get('/subscribers', 'SubscribeController@getSubscribes')->middleware('auth');

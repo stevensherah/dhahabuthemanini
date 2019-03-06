@@ -22,4 +22,13 @@ class PagesController extends Controller
     {
         return view('blog');
     }
+
+    public function getIcons()
+    {
+        return view('admin.icons');
+    }
+    public function getUser()
+    {
+        return view('admin.user');
+    }
 }
