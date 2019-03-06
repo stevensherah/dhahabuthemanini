@@ -6,19 +6,20 @@
 <div class="wrapper">
 
         <!-- original -->
-
-        <div class="header header-filter"  style="background-image: url('assets/img/bg2.jpeg'); max-height: 100%;">
+@if(count($posts) > 0)
+@foreach($posts as $post)
+        <div class="header header-filter"  style="background-image: url('/storage/cover_images/{{$post->cover_image}}'); max-height: 100%;">
                         
                 <div class="container">
                                 <div class="row">
                                                 <div class="col-md-8">
                                                 <h1 class="title">Latest Blog Post</h1>
-                                                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                                                <p class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at}}</p>
                                                 <h2 class="post-title">
-                                                                I believe every human has a finite number of heartbeats. I dont intend to waste any of mine.
+                                                                {{$post->title}}
                                                 </h2>
                                                 <br />
-                                                <a href="#" class="btn btn-gold btn-info btn-lg">Read More</a>
+                                                <a href="/posts/{{$post->id}}" class="btn btn-gold btn-info btn-lg">Read More</a>
                                                 </div>
                                                 {{-- <div class="col-md-3 well">
                                                         <H4 style="color:black">Categories</H4>
@@ -32,6 +33,12 @@
                                 </div>
                 </div>
         </div>
+
+@endforeach
+        {{$posts->links()}}
+@else
+        <p>No posts found</p>
+@endif
 
 
         <!--end of original -->
@@ -47,102 +54,31 @@
                                                 <div class="row">                                                       
                                                                 
                                                                         <!-- Main Content -->
-                                                        <div class="row text-left">
-                                                                <div class="col-lg-10 col-lg-offset-1 col-md-8 col-md-offset-1">
-                                                                <div class="post-preview">
-                                                                {{--  <div class="header header-filter">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                Man must explore, and this is exploration at its greatest
-                                                                        </h2>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
-                                                                        <h3 class="post-subtitle">
-                                                                                Problems look mighty small from 150 miles up
-                                                                        </h3>
-                                                                        </a>
-                                                                        
-                                                                </div>  --}}
+                                                        <div class="row text-left">                                              
                                                                 <h1 class="text-center" style="margin-top:-30px">Other Post</h1>
                                                                 <hr>
-                                                                <div class="post-preview">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                I believe every human has a finite number of heartbeats. I dont intend to waste any of mine.
-                                                                        </h2>
-                                                                        </a>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-                                                                </div>
-                                                                <hr>
-                                                                <div class="post-preview">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                Science has not yet mastered prophecy
-                                                                        </h2>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                                                                        <h3 class="post-subtitle">
-                                                                                We predict too much for the next year and yet far too little for the next ten.
-                                                                        </h3>
-                                                                        </a>
-                                                                        
-                                                                </div>
-                                                                <hr>
-                                                                <div class="post-preview">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                Failure is not an option
-                                                                        </h2>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                                                                        <h3 class="post-subtitle">
-                                                                                Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                                                                        </h3>
-                                                                        </a>
-                                                                        
-                                                                </div>
-                                                                <hr>
-                                                                <div class="post-preview">
-                                                                                <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-                                                                                <a href="post.html">
+                                                                <section>
+                                                                        @if(count($posts) > 0)
+                                                                        @foreach($posts as $post)
+                                                                        <div class="container container post-preview">
+                                                                                <img style="max-width:100%; max-height:100%;" src="/storage/cover_images/{{$post->cover_image}}">
+                                                                                <a href="/posts/{{$post->id}}"></a>
                                                                                 <h2 class="post-title">
-                                                                                        I believe every human has a finite number of heartbeats. I dont intend to waste any of mine.
+                                                                                        <a href="/posts/{{$post->id}}">{{$post->title}}</a>
                                                                                 </h2>
                                                                                 </a>
-                                                                                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
-                                                                </div>
-                                                                <hr>
-                                                                <div class="post-preview">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                Science has not yet mastered prophecy
-                                                                        </h2>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                                                                        <h3 class="post-subtitle">
-                                                                                We predict too much for the next year and yet far too little for the next ten.
-                                                                        </h3>
-                                                                        </a>
-                                                                        
-                                                                </div>
-                                                                <hr>
-                                                                <div class="post-preview">
-                                                                        <img style="max-width:100%; max-height:100%; backgroud:red;" src="assets/img/bg2.jpeg">
-                                                                        <a href="post.html">
-                                                                        <h2 class="post-title">
-                                                                                Failure is not an option
-                                                                        </h2>
-                                                                        <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                                                                        <h3 class="post-subtitle">
-                                                                                Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                                                                        </h3>
-                                                                        </a>
-                                                                        
-                                                                </div>
-                                                                <hr>
+                                                                                <p class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at}}</p>
+                                                                                <h3 class="post-subtitle">
+                                                                                        {{$post->body}}
+                                                                                </h3>
+                                                                        </div>
+                                                                        <hr>
+                                                                    @endforeach
+                                                                        {{$posts->links()}}
+                                                                    @else
+                                                                        <p>No posts found</p>
+                                                                    @endif
+                                                                </section>                                                               
                                                                 <!-- Pager -->
                                                                 <div class="text-center">
                                                                         <ul class="pagination pagination-warninggit ">

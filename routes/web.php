@@ -33,11 +33,10 @@ Route::POST('/', 'SubscribeController@store');
 Route::post('/submit', 'MessagesController@submit');
 
 
+Route::resource('posts', 'PostsController');
 
 
 Auth::routes();
-
-Route::resource('posts', 'PostsController');
 
 Route::get('/admin', 'AdminController@index')->name('Admin');
 Route::GET('/icons', 'PagesController@getIcons')->middleware('auth');
