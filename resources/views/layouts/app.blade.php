@@ -122,7 +122,7 @@
     <script src="../dashboard/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../dashboard/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <!-- Material Dashboard DEMO methods, dont include it in your project! -->
     <script src="../dashboard/demo/demo.js"></script>
     <script>
       $(document).ready(function() {
@@ -301,6 +301,10 @@
         md.initDashboardPageCharts();
 
       });
+    </script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
     </script>
 </body>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests;
 use App\Post;
 use DB;
 
@@ -24,15 +25,25 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $keyword = $request->get('search');
+        $perPage = 10;
+
+        if (!empty($keyword)) {
+            $posts = post::where('title', 'LIKE', "%$keyword%")
+                ->orWhere('body', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+        } else {
         //$posts = Post::all();
         //return Post::where('title', 'Post Two')->get();
         //$posts = DB::select('SELECT * FROM posts');
         //$posts = Post::orderBy('title','desc')->take(1)->get();
         //$posts = Post::orderBy('title','desc')->get();
 
-        $posts = Post::orderBy('created_at','desc')->paginate(10);
+        $posts = Post::orderBy('created_at','desc')->paginate($perPage);
+
+        }
         return view('posts.index')->with('posts', $posts);
     }
 

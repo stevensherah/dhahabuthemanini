@@ -2,13 +2,38 @@
 
 @section('content')
 <section class="row ">
-            <h1 class="offset-1">Your Blog Posts</h1>
 
+        
     <div class="col-md-10 offset-1 card">
-        <br>
-        <br>
-             @if(count($posts) > 0)
-             @foreach($posts as $post)
+                <div class="card-header card-header-tabs card-header-primary">
+                  <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                      <span class="nav-tabs-title"><h2>Your Blog Posts</h2></span>
+                      <ul class="nav nav-tabs float-right" data-tabs="tabs">
+                        <li class="nav-item">
+                            <form method="GET" action="{{ url('/posts') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0" role="search">
+                                <div class="input-group">
+                                        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                        <span class="input-group-append">
+                                            <button class="btn btn-secondary" type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                            </form>
+                        </li>  
+                        <li class="nav-item">
+                          <a class="btn btn-green" href="/posts/create">ADD NEW</a>
+                        </li>  
+                     </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  
+                
+                @if(count($posts) > 0)
+                @foreach($posts as $post)
             
                 <div class="well">
                         <div class="row">
@@ -33,11 +58,13 @@
                         </div>
                     </div>
                
-             @endforeach
-                {{$posts->links()}}
-            @else
-                <p>No posts found</p>
-            @endif
+                    @endforeach
+                        {{$posts->links()}}
+                    @else
+                        <p>No posts found</p>
+                    @endif
+                </div>
+            </div>
     </div>
 </section>
 @endsection

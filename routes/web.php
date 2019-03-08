@@ -46,3 +46,6 @@ Route::GET('/messages', 'messagesController@getMessages')->middleware('auth');
 
 
 Route::get('/subscribers', 'SubscribeController@getSubscribes')->middleware('auth');
+
+Route::resource('tasks', 'TasksController');
+Route::resource('admin/blogs', 'Admin\\blogsController');
