@@ -5,7 +5,7 @@
 	
 
 <div class="wrapper">
-		<div class="header header-filter"  style="background-image: url('assets/img/bg2.jpeg');">
+		<div class="header header-filter"  style="text-transform: uppercase;  background-image: url('assets/img/bg2.jpeg');">
 				
 		<div class="container">
 				<div class="row">

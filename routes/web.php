@@ -17,7 +17,19 @@
 
 Route::GET('/', 'PagesController@getIndex');
 Route::GET('/about', 'PagesController@getAbout');
-Route::GET('/blog', 'PagesController@getBlog');
+
+// Route::GET('/blog', 'PagesController@getBlog');
+// Route::GET('/blog-post', 'PagesController@getBlogpost');
+
+Route::resource('blog', 'BlogsController');
+
+// Add Comment to a post
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+
+// Reply to a Comment of a post
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
+
 
 
 // POSTS
@@ -27,6 +39,7 @@ Route::GET('/blog', 'PagesController@getBlog');
 // Route::GET('/posts', 'PostsController@getIndex');
 
 
+Route::GET('/subscribe', 'SubscribeController@index');
 
 
 Route::POST('/', 'SubscribeController@store');
@@ -49,3 +62,5 @@ Route::get('/subscribers', 'SubscribeController@getSubscribes')->middleware('aut
 
 Route::resource('tasks', 'TasksController');
 Route::resource('admin/blogs', 'Admin\\blogsController');
+
+

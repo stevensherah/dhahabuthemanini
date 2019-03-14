@@ -68,7 +68,7 @@
 
                         <div class="row">
                         <div class="col-md-4 col-md-offset-4 text-center">
-                                <button class="btn btn-gold btn-raised" type="submit">
+                                <button class="btn btn-gold btn-raised" type="submit" data-toggle="tooltip" data-placement="top" title="Send Message">
                                                 Send Message
                                 </button>
                         </div>

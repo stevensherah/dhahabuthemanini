@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section class="row ">
 
         
@@ -9,22 +10,25 @@
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
                       <span class="nav-tabs-title"><h2>Your Blog Posts</h2></span>
-                      <ul class="nav nav-tabs float-right" data-tabs="tabs">
-                        <li class="nav-item">
+                      <a class="btn btn-green" href="/posts/create">ADD NEW</a>
+                      <ul style="margin: 0 50px" class="nav nav-tabs pull-right" data-tabs="tabs">
+                        <li class="nav-item row ">
                             <form method="GET" action="{{ url('/posts') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0" role="search">
                                 <div class="input-group">
+                                    <div style="background:white; border-radius:20px" class=" col-md-10">
                                         <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                                    </div>
+                                    <br>
+                                    <div class=" col-md-1">
                                         <span class="input-group-append">
-                                            <button class="btn btn-secondary" type="submit">
+                                            <button style="border-radius:100px" class="btn btn-success" type="submit">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </span>
                                     </div>
+                                    </div>
                             </form>
-                        </li>  
-                        <li class="nav-item">
-                          <a class="btn btn-green" href="/posts/create">ADD NEW</a>
-                        </li>  
+                        </li> 
                      </ul>
                     </div>
                   </div>
@@ -41,8 +45,8 @@
                                 <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
                             </div>
                             <div class="col-md-8 col-sm-8">
-                                <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
-                                <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
+                                <b><h1><a href="/posts/{{$post->id}}"><b style="text-transform: uppercase;">{{$post->title}}</b></a></h1>
+                                <h3 class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</h3></b>
                                 <br>
                                 @if(!Auth::guest())
                                 @if(Auth::user()->id == $post->user_id)

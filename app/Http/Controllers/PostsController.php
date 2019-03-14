@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests;
 use App\Post;
+use App\Comment;
 use DB;
 
 class PostsController extends Controller
@@ -17,7 +18,7 @@ class PostsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'addComment']]);
     }
 
     /**
@@ -28,7 +29,7 @@ class PostsController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 10;
+        $perPage = 2;
 
         if (!empty($keyword)) {
             $posts = post::where('title', 'LIKE', "%$keyword%")
@@ -44,6 +45,9 @@ class PostsController extends Controller
         $posts = Post::orderBy('created_at','desc')->paginate($perPage);
 
         }
+
+        // session()->flash('flashmessage', 'Your search results');
+
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -109,6 +113,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('posts.show')->with('post', $post);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -191,4 +196,23 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/posts')->with('success', 'Post Removed');
     }
+    // public function addComment(Post $post)
+    // {
+    //         // $this->validate($request, [
+    //         //     'body' => 'required'
+    //         // ]);
+
+    //         // $comment = new Comment;
+    //         // $comment->body = $post->input('body');
+    //         // $comment->post_id = $post-> get($post->id) ;
+    //         // $comment->save();
+
+    //         comment::create([
+
+    //             'body' => 'body',
+    //             'post_id' => $post->id
+    //         ]);
+
+    //     return back();
+    // }
 }

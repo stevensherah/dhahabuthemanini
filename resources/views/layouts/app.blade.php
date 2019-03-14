@@ -16,7 +16,7 @@
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-	<!--     Fonts and icons     -->
+  <!--     Fonts and icons     -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -24,30 +24,34 @@
   
   <!-- ADMILTE Theme style -->  
 
-  <link rel="stylesheet" href="assets/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="assets/css/skin-blue.css">
+  {!! Html::style('assets/css/AdminLTE.min.css') !!}
+  {!! Html::style('assets/css/skin-blue.css') !!}
 
-	<!-- CSS Files -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/material-kit.css.map" rel="stylesheet"/>
+  <!-- CSS Files -->
+  
+  {!! Html::style('assets/css/bootstrap.min.css') !!}
+  {!! Html::style('assets/css/material-kit.css.map') !!}
 
+    <!-- Materia Css Icons -->
 
-  {{-- Materia Css Icons --}}
-
-	<link  rel="stylesheet" type="text/css" href="iconfont/material-icons.css">
+    {!! Html::style('iconfont/material-icons.css') !!}
 
 
     <!-- Styles -->
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {!! Html::style('css/app.css') !!}
 
       <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
       <!--     Fonts and icons     -->
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
       <!-- CSS Files -->
-      <link href="../dashboard/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+
+        {!! Html::style('../dashboard/css/material-dashboard.css?v=2.1.1') !!}
       <!-- CSS Just for demo purpose, dont include it in your project -->
-      <link href="../dashboard/demo/demo.css" rel="stylesheet" />
+
+        {{--  {!! Html::style('../dashboard/demo/demo.css" rel="stylesheet') !!}  --}}
   </head>
 
   <body class="">
@@ -68,6 +72,8 @@
         <!-- End Navbar -->
 
         <div class="content">
+
+          @include('include.flashmessage')
 
           @yield('content')
           

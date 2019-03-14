@@ -20,34 +20,40 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-	<link  rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css">
+	{!! Html::style('vendor/font-awesome/css/font-awesome.min.css') !!}
+
 	
 	{{-- Materia Css Icons --}}
 
-	<link  rel="stylesheet" type="text/css" href="iconfont/material-icons.css">
+	{!! Html::style('iconfont/material-icons.css') !!}
 
 
 
 	<!-- CSS Files -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/material-kit.css.map" rel="stylesheet"/>
-	<link href="assets/css/style.css" rel="stylesheet"/>
+	{!! Html::style('assets/css/bootstrap.min.css') !!}
+	{!! Html::style('assets/css/material-kit.css.map') !!}
+	{!! Html::style('assets/css/style.css') !!}
 
 	<!-- CUSTOM CSS -->
-	<link href="assets/css/demo.css" rel="stylesheet"/>
-	<link href="assets/css/material-kit.css" rel="stylesheet"/>
-	<link href="assets/css/style.css" rel="stylesheet"/>
+	{!! Html::style('assets/css/demo.css') !!}
+	{!! Html::style('assets/css/material-kit.css') !!}
+	{!! Html::style('assets/css/style.css') !!}
 
 
 </head>
 
 <body class="landing-page">
 
-        @include('include.navbar')
+	@include('include.navbar')
+	
+	@include('include.flashmessage')
 
-        @yield('content')
+	@yield('content')
+	
+	@include('include.modals')
 
-        @include('include.footer')
+	@include('include.footer')
+	
 
         
 

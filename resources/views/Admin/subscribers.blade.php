@@ -31,6 +31,7 @@
                                 <div class="col-md-2">
                                     {{--  #################################################  --}}
                                 </div>
+                                <br><hr>
                                     <div class="col-md-12 text-left pull-center">
                                             <ul class="list-group">
                                                             <li id="resepient_created_at" class="list-group-item">Created.: {{$subscribe->created_at->toFormattedDateString() }}</li>
@@ -40,6 +41,7 @@
                                                             <li id="resepient_phone" class="list-group-item">Phone No.: {{$subscribe->phone}}</li>                         
                                             </ul>
                                     </div>
+                                <br><hr>
                                     <div class="col-md-2">
                                     {{--  #################################################  --}}
                                     </div>

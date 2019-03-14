@@ -6,7 +6,7 @@
 -->
   <div class="logo bg-warning">
     <a href="/admin" class="simple-text logo-normal" style="color:black">
-      <b>DHAHABUTHEMANINI</b>
+      <b>{{ env('APP_NAME') }}</b>
     </a>
   </div>
   <div class="sidebar-wrapper">

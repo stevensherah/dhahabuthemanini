@@ -12,16 +12,16 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" style="max-height: 50px; padding-top: 0.8px; font-family: forte; font-size: 30px;" href="#">
-                                    <img style="max-height" id="logo" src="assets\img\Logos\LOGO.png" alt="logo">                 
+                                    <img style="max-height" id="logo" src="assets\img\Logos\LOGO.png" alt="logo"></img>                 
                             </a>
                     </div>
     
                     <div class="collapse navbar-collapse" id="navigation-example-success">
                             <ul class="nav navbar-nav navbar-right">
                                         <!-- INSERT PAGES -->
-                                        <li class="active"><a href="#">HOME</a></li>
+                                        <li class="active"><a href="/">HOME</a></li>
                                         <li><a href="/about">ABOUT US</a></li>
-                                        <li><a href="/posts">BLOG</a></li>
+                                        <li><a href="/blog">BLOG</a></li>
                                        
                                             {{--  <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">EVENTS <b class="caret"></b></a>
