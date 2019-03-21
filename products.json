@@ -10,6 +10,10 @@
                 "type": "text"
             },
             {
+                "name": "cover_image",
+                "type": "file"
+            },
+            {
                 "name": "",
                 "type": "select",
                 "options": {
@@ -36,12 +40,17 @@
                 "name": "user",
                 "type": "belongsTo",
                 "class": "App\\User"
+            },
+            {
+                "name": "user",
+                "type": "belongsTo",
+                "class": "App\\User"
             }
         ],
         "validations": [
             {
                 "field": "title",
-                "rules": "required|max:10"
+                "rules": "required|max:20"
             }
         ]
     }

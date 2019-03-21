@@ -13,7 +13,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
+        view()->composer('include.sidebar', function ($view) {
+
+            $view->with('archives', \App\Post::archives());
+
+            $view->with('tags', \App\Tag::pluck('name'));
+            
+        });
     }
 
     /**

@@ -11,17 +11,17 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" style="max-height: 50px; padding-top: 0.8px; font-family: forte; font-size: 30px;" href="#">
-                                    <img style="max-height" id="logo" src="assets\img\Logos\LOGO.png" alt="logo"></img>                 
+                            <a class="navbar-brand" style="max-height: 50px; padding-top: 0.8px; font-family: forte; font-size: 30px;" href="{{ url('/') }}">
+                                    <img style="max-height" id="logo" src="{{ URL::to('/')}}/assets/img/Logos/LOGO.png" alt="logo"></img>                 
                             </a>
                     </div>
     
                     <div class="collapse navbar-collapse" id="navigation-example-success">
                             <ul class="nav navbar-nav navbar-right">
                                         <!-- INSERT PAGES -->
-                                        <li class="active"><a href="/">HOME</a></li>
-                                        <li><a href="/about">ABOUT US</a></li>
-                                        <li><a href="/blog">BLOG</a></li>
+                                        <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">HOME</a></li>
+                                        <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ url('/about') }}">ABOUT US</a></li>
+                                        <li class="{{ Request::is('blog') ? 'active' : '' }}"><a href="{{ url('/blog') }}">BLOG</a></li>
                                        
                                             {{--  <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">EVENTS <b class="caret"></b></a>
@@ -65,6 +65,7 @@
                                                     </a>
                     
                                                     <ul class="dropdown-menu">
+                                                        <li><a href="{{ url('/admin') }}">DASHBOARD</a></li>
                                                         <li>
                                                             <a href="{{ route('logout') }}"
                                                                 onclick="event.preventDefault();

@@ -42,13 +42,27 @@ class BlogsController extends Controller
         //$posts = Post::orderBy('title','desc')->take(1)->get();
         //$posts = Post::orderBy('title','desc')->get();
 
+        // $post = post::latest()
+        // ->filter(request(['moth', 'year']))
+        // ->get();
+
+
         $posts = Post::orderBy('created_at','desc')->paginate($perPage);
 
         }
 
         // session()->flash('flashmessage', 'Your search results');
 
+        // return view('blog.blog')->with('posts', $posts);
+
         return view('blog.blog')->with('posts', $posts);
+
+    }
+
+    public function getRouteKeyName()
+    {
+        //
+        return 'name';        
     }
 
     public function show($id)

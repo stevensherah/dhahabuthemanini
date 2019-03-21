@@ -22,6 +22,42 @@ services:
     depends_on:
       - mariadb
     ports:
-      - 4000:4000
+      - 3000:3000
     volumes:
       - ./:/app
+
+    # db_server:
+    #   image: ${DB}
+    #   container_name: phpmyadmin_testing_mariadb
+    #   environment:
+    #     - MYSQL_ROOT_PASSWORD=test123
+    #   volumes:
+    #     - ./testing/testing.cnf:/etc/mysql/conf.d/testing.cnf:ro
+
+    phpmyadmin:
+      build:
+        context: testing/
+      container_name: phpmyadmin_testing
+      volumes:
+        - /sessions
+      ports:
+        - 8090:80
+      environment:
+        - PMA_ARBITRARY=1
+        - MARIADB_PASSWORD=my_password  
+      depends_on:
+        - mariadb
+
+# phpmyadmin:
+#     image: phpmyadmin/phpmyadmin
+#     container_name: phpmyadmin
+#     environment:
+#      - PMA_ARBITRARY=1
+#     restart: always
+#     ports:
+#      - 8080:80
+#     volumes:
+#      - /sessions
+
+
+# docker-compose up -d --force-recreate --scale SERVICE=6 -p DHABUTHEMANINI

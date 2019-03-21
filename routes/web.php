@@ -24,12 +24,14 @@ Route::GET('/about', 'PagesController@getAbout');
 Route::resource('blog', 'BlogsController');
 
 // Add Comment to a post
-Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/comment/store', 'CommentController@store')->name('comment.add'); 
+
 
 // Reply to a Comment of a post
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 
+Route::get('/posts/tags/{tag}', 'TagsController@index');
 
 
 // POSTS

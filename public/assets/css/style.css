@@ -63,3 +63,13 @@ a:hover {
     color: blue;
     text-decoration: underline;
 }
+
+.blog h3 {
+    line-height: 1.5;
+    margin: 30px 0;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}

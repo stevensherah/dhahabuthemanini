@@ -11,7 +11,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     
         <title>{{ config('app.name', 'Laravel') }}</title>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="{{ URL::to('/')}}/assets/img/favicon.png">
 
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -63,17 +63,17 @@
 </body>
 
 	<!--   Core JS Files   -->
-	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="assets/js/material.min.js"></script>
+	<script src="{{ URL::to('/')}}/assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="{{ URL::to('/')}}/assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="{{ URL::to('/')}}/assets/js/material.min.js"></script>
 
 	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="assets/js/nouislider.min.js" type="text/javascript"></script>
+	<script src="{{ URL::to('/')}}/assets/js/nouislider.min.js" type="text/javascript"></script>
 
 	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-	<script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+	<script src="{{ URL::to('/')}}/assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
 
 	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-	<script src="assets/js/material-kit.js" type="text/javascript"></script>
+	<script src="{{ URL::to('/')}}/assets/js/material-kit.js" type="text/javascript"></script>
 
 </html>

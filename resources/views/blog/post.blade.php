@@ -41,7 +41,7 @@
                                                                                 <h2 class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</h2>
                                                                                 {{--  <img style="max-width:100%; max-height:100%;" src="/storage/cover_images/{{$post->cover_image}}">  --}}
                                                                                 <hr>
-                                                                                <h3 style="padding:0 50px" class="post-subtitle card">
+                                                                                <h3 style="padding:0 50px" class="post-subtitle blog card">
                                                                                         {{$post->body}}
                                                                                 </h3>
                                                                         </div>

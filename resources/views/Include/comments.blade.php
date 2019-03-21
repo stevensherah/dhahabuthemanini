@@ -97,44 +97,7 @@
                                 </div>
                                 
                         </div>
-                        <div class="col-md-3 well">
-                                <form method="GET" action="{{ url('/posts') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0" role="search">
-                                        <div class="input-group">
-                                                <div  style="background-color:white; border-radius:20px">
-                                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                                </div>
-                                                <br>
-                                                <span class="input-group-append">
-                                                        <button style="border-radius:100px" class="btn btn-success" type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                        </button>
-                                                </span>
-                                                </div>
-                                        </form>
-                                <div class="">
-                                        <h2 class="title">Archives</h2>
-                                        <ul>
-                                                <li>ADD</li>
-                                                <li>ADD</li>
-                                                <li>ADD</li>
-                                                <li>ADD</li>
-                                                <li>ADD</li>
-                                                <li>ADD</li>
-                                        </ul>
-                                </div>
-                                <div class="">
-                                                <h2 class="title">Categories</h2>
-                                                <ul>
-                                                        <li>ADD</li>
-                                                        <li>ADD</li>
-                                                        <li>ADD</li>
-                                                        <li>ADD</li>
-                                                        <li>ADD</li>
-                                                        <li>ADD</li>
-                                                </ul>
-                                </div>
-
-                        </div>
+                        @include('include.sidebar')
                 </div>
         
         </div>
