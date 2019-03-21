@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Post;
 use DB;
 
+use App\Product;
+
 class PagesController extends Controller
 {
     //
@@ -43,5 +45,23 @@ class PagesController extends Controller
     public function getUser()
     {
         return view('admin.user');
+    }
+    public function products(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 20;
+
+        if (!empty($keyword)) {
+            $products = Product::where('title', 'LIKE', "%$keyword%")
+                ->orWhere('content', 'LIKE', "%$keyword%")
+                ->orWhere('body', 'LIKE', "%$keyword%")
+                ->orWhere('cover_image', 'LIKE', "%$keyword%")
+                ->orWhere('user_id', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+        } else {
+            $products = Product::latest()->paginate($perPage);
+        }
+
+        return view('include.productdropdown', compact('products'));
     }
 }

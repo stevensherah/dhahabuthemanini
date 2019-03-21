@@ -38,17 +38,11 @@
                                             <li class="dropdown">
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs <b class="caret"></b></a>
                                                             <ul class="dropdown-menu">
-                                                                      <li><a href="#">BOYS TO MEN</a></li>
-                                                                      <li><a href="#">GIRLS TO LADIES</a></li>
-                                                                      <li><a href="#">MORAN PROJECT</a></li>
-                                                                      <li><a href="#">ElIMA PROJECT</a></li>
-                                                                      <li><a href="#">MORAN PROJECT</a></li>
-                                                                      <li class="divider"></li>
-                                                                      <li><a href="#">Separated link</a></li>
-                                                                      <li class="divider"></li>
-                                                                  <li><a href="#">One more separated link</a></li>
+
+                                                                {{-- @include('include.productdropdown') --}}
+                                                                      
                                                             </ul>
-                                                    </li>
+                                            </li>
 
                                             <!-- CONTACT MODAL --> 
                                             <li><a data-toggle="modal" data-target="#myModal">CONTACT US</a></li>

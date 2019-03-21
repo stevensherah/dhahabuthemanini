@@ -1,15 +1,13 @@
 <div class="col-md-3 well">
-                                <form method="GET" action="{{ url('/posts') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0" role="search">
+                                <form method="GET" action="{{ url('/blog') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0" role="search">
                                         <div class="input-group">
                                                 <input type="text" class="form-group" name="search" placeholder="Search..." value="{{ request('search') }}">
                                                 <br>
-                                                <span class="">
-                                                        <button  class="btn btn-success" type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                        </button>
+                                                <span class="input-group-addon"> <button  type="submit">
+                                                        <i class="material-icons">search</i></button>
                                                 </span>
                                                 </div>
-                                        </form>
+                                        </form>                                        
                                 <div class="">
                                         <h2 class="title">Archives</h2>
                                         <ol class="list-unstyled">

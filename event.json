@@ -10,17 +10,25 @@
                 "type": "text"
             },
             {
-                "name": "body",
-                "type": "text"
-            },
-            {
                 "name": "cover_image",
                 "type": "file"
             },
             {
                 "name": "user_id",
                 "type": "integer#unsigned"
-            }    
+            },            
+            {
+                "name": "event_id",
+                "type": "integer#unsigned"
+            },
+            {
+                "name": "gallery_id",
+                "type": "integer#unsigned"
+            },
+            {
+                "name": "new_id",
+                "type": "integer#unsigned"
+            }
         ],
         "foreign_keys": [
             {
@@ -61,10 +69,6 @@
             {
                 "field": "title",
                 "rules": "required|max:20"
-            },
-            {
-                "field": "content",
-                "rules": "required|max:100"
             }
         ]
     }

@@ -20,6 +20,14 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('tags', \App\Tag::pluck('name'));
             
+            
+        });
+
+        view()->composer('include.productdropdown', function ($view) {
+
+            $view->with('archives', \App\Product::products());
+            
+            
         });
     }
 

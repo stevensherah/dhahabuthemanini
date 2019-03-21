@@ -72,7 +72,7 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'cover_image' => 'image|nullable|max:1999'
+            'cover_image' => 'image|nullable|max:4999'
         ]);
 
         // Handle File Upload

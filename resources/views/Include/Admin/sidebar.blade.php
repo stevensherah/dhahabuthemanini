@@ -5,66 +5,72 @@
     Tip 2: you can also add an image using data-image tag
 -->
   <div class="logo bg-warning">
-    <a href="/admin" class="simple-text logo-normal" style="color:black">
+    <a href="{{ url('/admin') }}" class="simple-text logo-normal" style="color:black">
       <b>{{ env('APP_NAME') }}</b>
     </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item active  ">
-        <a class="nav-link" href="/admin">
+      <li class="nav-item" class=" {{ Request::is('/admin') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('/admin') }}">
           <i class="material-icons">dashboard</i>
           <p>Dashboard</p>
         </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="/user">
+      <li class="nav-item" class=" {{ Request::is('/user') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('/user') }}">
           <i class="material-icons">person</i>
           <p>User Profile</p>
         </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="./tables.html">
-          <i class="material-icons">content_paste</i>
-          <p>Table List</p>
-        </a>
+      <li class="nav-item" class=" {{ Request::is('/messages') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/messages') }}">
+            <i class="material-icons">message</i>
+            <p>Messages</p>
+          </a>
+        </li>
+        <li class="dropdown nav-item" class=" {{ Request::is('/') ? 'active' : '' }}">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="material-icons">person</i>
+              <p>Programs<b class="caret"></b></p></a>
+            <ul class="dropdown-menu">
+                      <li><a href="{{ url('#') }}">BOYS TO MEN</a></li>
+                      <li><a href="{{ url('#') }}">GIRLS TO LADIES</a></li>
+                      <li><a href="{{ url('#') }}">MORAN PROJECT</a></li>
+                      <li><a href="{{ url('#') }}">ElIMA PROJECT</a></li>
+                      <li><a href="{{ url('#') }}">MORAN PROJECT</a></li>
+            </ul>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="./typography.html">
-          <i class="material-icons">library_books</i>
-          <p>Typography</p>
-        </a>
+      <li class="nav-item" class=" {{ Request::is('/subscribers') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/subscribers') }}">
+            <i class="material-icons">crowd</i>
+            <p>Subscriptions</p>
+          </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="/icons">
-          <i class="material-icons">bubble_chart</i>
-          <p>Icons</p>
-        </a>
+      <li class="nav-item" class=" {{ Request::is('/posts') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/posts') }}">
+            <i class="material-icons">email</i>
+            <p>Posts</p>
+          </a>
+      </li>      <li class="nav-item" class=" {{ Request::is('/blogs') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/admin') }}/blogs">
+            <i class="material-icons">paper</i>
+            <p>Blogs</p>
+          </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="./map.html">
-          <i class="material-icons">location_ons</i>
-          <p>Maps</p>
-        </a>
+      <li class="nav-item" class=" {{ Request::is('/products') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/products') }}">
+            <i class="material-icons">busket</i>
+            <p>Products</p>
+          </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="./notifications.html">
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
-        </a>
+      <li class="nav-item" class=" {{ Request::is('/tasks') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/tasks') }}">
+            <i class="material-icons">pencil</i>
+            <p>User Tasks</p>
+          </a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="./rtl.html">
-          <i class="material-icons">language</i>
-          <p>RTL Support</p>
-        </a>
-      </li>
-      <li class="nav-item active-pro ">
-        <a class="nav-link" href="./upgrade.html">
-          <i class="material-icons">unarchive</i>
-          <p>Upgrade to PRO</p>
-        </a>
-      </li>
+      
     </ul>
   </div>
 </div>

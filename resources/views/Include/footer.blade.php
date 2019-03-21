@@ -20,7 +20,7 @@
                         </ul>
                 </nav>
                 <div class="copyright pull-right">
-                        &copy; 2018, made by <i class="fa fa-heart heart"></i><a href="#" >stevensherah.com</a>
+                        &copy; 2018, made by <i class="fa fa-heart heart"></i><a href="https://www.stevensherah.com" >    stevensherah.com</a>
                 </div>
                 </div>
 </footer>

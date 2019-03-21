@@ -66,3 +66,5 @@ Route::resource('tasks', 'TasksController');
 Route::resource('admin/blogs', 'Admin\\blogsController');
 
 
+
+Route::resource('admin/products', 'ProductsController');

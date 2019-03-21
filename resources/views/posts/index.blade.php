@@ -21,7 +21,7 @@
                                     <br>
                                     <div class=" col-md-1">
                                         <span class="input-group-append">
-                                            <button style="border-radius:100px" class="btn btn-success" type="submit">
+                                            <button style="border-radius:100px" class="btn btn-success  btn-fab btn-fab-mini btn-round" type="submit">
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </span>
