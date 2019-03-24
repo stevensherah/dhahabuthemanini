@@ -42,7 +42,8 @@
                                                         <img style="max-width:100%; max-height:100%;" src="{{ URL::to('/')}}/storage/cover_images/{{$post->cover_image}}">                                                     </a>
 
                                                         <h3 class="blog">
-                                                                {{$post->body}}
+                                                                {{--  {{$post->body}}  --}}
+                                                                {{ str_limit($post->body, 500) }}
                                                         </h3>
                                                         
                                                         <a class="btn btn-info" href="/blog/{{$post->id}}">READ MORE</a>

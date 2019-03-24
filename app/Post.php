@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Carbon\carbon; 
 
 class Post extends Model

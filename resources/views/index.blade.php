@@ -5,15 +5,15 @@
 	
 
 <div class="wrapper">
-		<div class="header header-filter"  style="text-transform: uppercase;  background-image: url('assets/img/bg2.jpeg');">
+		<div class="header header-filter"  style="text-transform: uppercase;  background-image: url('assets/img/IMG_1140.jpg');">
 				
 		<div class="container">
 				<div class="row">
 						<div class="col-md-8">
-						<h1 class="title">INVESTING IN THE FUTURE OF THE FAMILY.</h1>
+						<h1 class="title">WELCOME TO THE FAMILY.</h1>
 						<h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolorum officia cupiditate ullam perferendis, aperiam exercitationem. Est nam animi blanditiis incidunt illum, veritatis velit officiis, placeat dolorum eveniet numquam quibusdam!</h4>
 						<br />
-						<a href="#" class="btn btn-info btn-raised btn-lg">VIEW MORE</a>
+						<a href="{{ url('/') }}" class="btn btn-info btn-raised btn-lg">OUR PROGRAMS</a>
 						</div>
 				</div>
 		</div>
@@ -25,7 +25,10 @@
 				<div class="row">
 				    <div class="col-md-8 col-md-offset-2">
 					<h2 class="title">Let's talk Family</h2>
-					<h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+					<h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.
+						<br>
+					<a href="{{ url('/about') }}" class="btn btn-info btn-raised">VIEW MORE</a>
+					</h5>
 				    </div>
 						</div>				
 						
@@ -96,7 +99,7 @@
 	
 						<div class="row">
 				    <div class="col-md-8 col-md-offset-2">
-					<h2 class="title">Lets talk Family</h2>
+					<h2 class="title">"Qoute of the day"</h2>
 					<blockquote>
 									<p>									I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
 									<small>Kanye West, Musician</small>
@@ -106,7 +109,7 @@
 						
 						<div class="features">
 							<div class="row">
-								<h2 class="title">Our Projects</h2>
+								<h2 class="title">Our Programs</h2>
 					    <div class="col-md-3">
 									<div class="info">
 										<div class="icon icon-primary">
@@ -151,7 +154,7 @@
 			    </div>
 	
 				<div class="section text-center">
-				<h2 class="title">Here is our team</h2>
+				<h2 class="title">Meet our team</h2>
 	
 						<div class="team">
 							<div class="row">

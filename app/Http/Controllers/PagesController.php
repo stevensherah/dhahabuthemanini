@@ -24,19 +24,19 @@ class PagesController extends Controller
         return view('about');
     }
 
-    public function getBlog()
-    {
-        $posts = Post::orderBy('created_at','desc')->paginate(10);
-        return view('blog.blog')->with('posts', $posts);
-    }
+    // public function getBlog()
+    // {
+    //     $posts = Post::orderBy('created_at','desc')->paginate(10);
+    //     return view('blog.blog')->with('posts', $posts);
+    // }
 
-    public function getBlogpost()
-    {
-        $posts = Post::orderBy('created_at','desc')->paginate(1);
-                // $post = Post::find($id);
+    // public function getBlogpost()
+    // {
+    //     $posts = Post::orderBy('created_at','desc')->paginate(1);
+    //             // $post = Post::find($id);
 
-        return view('blog.post')->with('posts', $posts);
-    }
+    //     return view('blog.post')->with('posts', $posts);
+    // }
 
     public function getIcons()
     {
