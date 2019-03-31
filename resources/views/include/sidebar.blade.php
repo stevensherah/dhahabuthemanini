@@ -24,7 +24,7 @@
                                                         
                                                         @if(count($tags) > 0)
                                                         @foreach ($tags as $tag)
-                                                                <li><a href="/post/tags/{{ $tag }}">
+                                                                <li><a href="/blog/tags/{{ $tag }}">
                                                                          {{ $tag  }}
                                                                 </a></li>
                                                         @endforeach

@@ -7,7 +7,7 @@
                                         <hr>
                                         <ul class="">
 
-                                                @if(count($post->comments) > 0)     
+                                                {{-- @if(count($post->comments) > 0)     
                                                 @foreach ($post->comments as $comment )
                                                 <li class="row card">
                                                         <div class="col-md-2">
@@ -28,6 +28,20 @@
 
                                                 @else
                                                 <li class="row card">
+                                                    <h2>NO COMMENTS YET</h2>
+                                                </li>
+                                                @endif --}}
+
+                                                @if(count($post->comments) > 0)     
+                                                @foreach ($post->comments as $comment )
+                                                <li class="card">                                                       
+                                                @include('partials._comment_replies', ['comments' => $post->comments, 'post_id' => $post->id])
+                                                </li>
+                                                <br>
+                                                @endforeach
+
+                                                @else
+                                                <li class="card">
                                                     <h2>NO COMMENTS YET</h2>
                                                 </li>
                                                 @endif

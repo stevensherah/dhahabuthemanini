@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.index')
 
 
 @section('content')
@@ -42,7 +42,7 @@
                                                                                 {{--  <img style="max-width:100%; max-height:100%;" src="/storage/cover_images/{{$post->cover_image}}">  --}}
                                                                                 <hr>
                                                                                 <h3 style="padding:0 50px" class="post-subtitle blog card">
-                                                                                        {{$post->body}}
+                                                                                        {!! $post->body !!}
                                                                                 </h3>
                                                                         </div>
                                                                         <hr>

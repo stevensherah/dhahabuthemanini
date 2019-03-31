@@ -23,12 +23,24 @@
           <p>User Profile</p>
         </a>
       </li>
+      <li class="nav-item" class=" {{ Request::is('/users') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('/users') }}">
+          <i class="material-icons">person</i>
+          <p>Users List</p>
+        </a>
+      </li>
       <li class="nav-item" class=" {{ Request::is('/messages') ? 'active' : '' }}">
           <a class="nav-link" href="{{ url('/messages') }}">
             <i class="material-icons">message</i>
             <p>Messages</p>
           </a>
-        </li>
+      </li>
+      <li class="nav-item" class=" {{ Request::is('/filemanager') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('/filemanager') }}">
+          <i class="material-icons">folder</i>
+          <p>File Manager</p>
+        </a>
+      </li>
         <li class="dropdown nav-item" class=" {{ Request::is('/') ? 'active' : '' }}">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="material-icons">person</i>

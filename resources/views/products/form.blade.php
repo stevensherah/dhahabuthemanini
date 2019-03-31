@@ -9,8 +9,8 @@
     {!! $errors->first('content', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
-    <label for="body" class="control-label">{{ 'Body' }}</label>
-    <textarea class="form-control" rows="5" name="body" type="textarea" id="body" >{{ isset($product->body) ? $product->body : ''}}</textarea>
+    <label for="body" class="control-label">{{ 'Body' }}</label><br>
+    <textarea id="my-editor" class="form-control" rows="5" name="body" type="textarea" id="body" >{{ isset($product->body) ? $product->body : ''}}</textarea>
     {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('cover_image') ? 'has-error' : ''}}">

@@ -34,7 +34,7 @@
                                 <div class="row well">
                                     <div class="col-md-6">
                                         <a href="{{ url('/admin/products/' . $item->id) }}">
-                                                <img style="width:100%" src="/storage/uploads/{{$item->cover_image}}">
+                                                <img style="width:100%" src="{{ URL::to('/')}}/public/storage/uploads/{{$item->cover_image}}">
                                         </a>
                                     </div>
                                     <div class="col-md-6">

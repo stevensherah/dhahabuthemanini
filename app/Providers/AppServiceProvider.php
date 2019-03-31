@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // HOW IT SHOULD BE
+        // view()->composer('include.sidebar', function ($view) {
+
+        //     $archives =  \App\Post::archives();
+
+        //     $tags = \App\Tag::has('posts')->pluck('name');
+
+        //     $view->with(compact('archives', 'tags'));
+            
+            
+        // });
         
         view()->composer('include.sidebar', function ($view) {
 
@@ -23,12 +35,6 @@ class AppServiceProvider extends ServiceProvider
             
         });
 
-        view()->composer('include.productdropdown', function ($view) {
-
-            $view->with('archives', \App\Product::products());
-            
-            
-        });
     }
 
     /**

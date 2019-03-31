@@ -31,6 +31,12 @@ class Product extends Model
     {
         return static::selectRaw('title');
     }
+    public function getRouteKeyName()
+    {
+
+        return 'name';
+
+    }
 
     public function user()
     {

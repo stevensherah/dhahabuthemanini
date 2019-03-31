@@ -19,7 +19,7 @@
                         {{Form::text('title', '', ['class' => 'form-control ', 'placeholder' => 'Title'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
+                        {{Form::textarea('body', '', ['id' => 'my-editor', 'class' => 'form-control', 'placeholder' => 'Body Text'])}}
                     </div>
                     <div class="form-control">                        
                         {!! Form::file('cover_image') !!}

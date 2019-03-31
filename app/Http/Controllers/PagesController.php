@@ -15,8 +15,7 @@ class PagesController extends Controller
 
     public function getIndex()
     {
-        $posts = Post::orderBy('created_at','desc')->paginate(10);
-        return view('index')->with('posts', $posts);
+        return view('index');
     }
 
     public function getAbout()
@@ -46,22 +45,9 @@ class PagesController extends Controller
     {
         return view('admin.user');
     }
-    public function products(Request $request)
+    public function getFilemanager()
     {
-        $keyword = $request->get('search');
-        $perPage = 20;
-
-        if (!empty($keyword)) {
-            $products = Product::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('content', 'LIKE', "%$keyword%")
-                ->orWhere('body', 'LIKE', "%$keyword%")
-                ->orWhere('cover_image', 'LIKE', "%$keyword%")
-                ->orWhere('user_id', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
-        } else {
-            $products = Product::latest()->paginate($perPage);
-        }
-
-        return view('include.productdropdown', compact('products'));
+        return view('admin.filemanager');
     }
+   
 }

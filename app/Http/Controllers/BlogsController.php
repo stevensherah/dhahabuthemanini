@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests;
 use App\Post;
 use App\Comment;
+use App\TAg;
 use DB;
 
 class BlogsController extends Controller
@@ -59,11 +60,8 @@ class BlogsController extends Controller
 
     }
 
-    public function getRouteKeyName()
-    {
-        //
-        return 'name';        
-    }
+
+ 
 
     public function show($id)
     {

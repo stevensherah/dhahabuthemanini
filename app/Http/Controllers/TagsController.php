@@ -4,27 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class tagsComtroller extends Controller
+use App\post;
+
+use App\Tag;
+
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
     public function index(Tag $tag)
     {
         //
-        return view('blog.blog', compact('tags'));
+
+        $post = $tag->$post;
+
+        return view('blog.blog', compact('posts'));
 
         
     }
 
-    public function getRouteKeyname()
-    {
-        //
-        return 'name';        
-    }
+ 
 
     /**
      * Show the form for creating a new resource.

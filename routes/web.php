@@ -31,7 +31,7 @@ Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 
-Route::get('/posts/tags/{tag}', 'TagsController@index');
+Route::get('/blog/tags/{tag}', 'TagsController@index');
 
 
 // POSTS
@@ -56,7 +56,10 @@ Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('Admin');
 Route::GET('/icons', 'PagesController@getIcons')->middleware('auth');
 Route::GET('/user', 'PagesController@getUser')->middleware('auth');
+Route::GET('/filemanager', 'PagesController@getFilemanager')->middleware('auth');
 Route::GET('/messages', 'messagesController@getMessages')->middleware('auth');
+Route::GET('/users', 'usersController@getUsers')->middleware('auth');
+
 
 
 

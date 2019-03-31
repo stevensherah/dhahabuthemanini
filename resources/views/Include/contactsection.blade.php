@@ -17,8 +17,8 @@
                         </div>
                         <div class="col-md-3">
                                 <div class="team-player">
-                                        <i class="fa fa-instagram fa-4x"></i>
-                                        <h4 class="title">Instagram</h4>
+                                        <i class="fa fa-linkedin fa-4x"></i>
+                                        <h4 class="title">Linkedin</h4>
                                 </div>
                         </div>
                         <div class="col-md-3">
@@ -33,12 +33,12 @@
 </div>
 
 
-<div class="section landing-section">
+<div class="section landing-section " id="contact">
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
         <h2 class="text-center title">Talk to Us</h2>
                 <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
-        <form class="contact-form" method="POST" action="/">
+        <form class="contact-form"  method="POST" action="/">
                 {{ csrf_field() }}
                         <div class="row">
                         <div class="col-md-12">

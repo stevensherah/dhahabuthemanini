@@ -1,4 +1,4 @@
-@extends('Layouts.index')
+@extends('layouts.index')
 
 
 @section('content')
@@ -43,13 +43,14 @@
 
                                                         <h3 class="blog">
                                                                 {{--  {{$post->body}}  --}}
-                                                                {{ str_limit($post->body, 500) }}
+                                                                {!! str_limit($post->body, 500) !!}
                                                         </h3>
                                                         
                                                         <a class="btn btn-info" href="/blog/{{$post->id}}">READ MORE</a>
                                                 </div>
                                                 <hr>
                                                 @endforeach
+                                                
                                                 <!-- Pager -->
                                                 <div class="text-center">
                                                         <ul class="pagination pagination-warninggit ">

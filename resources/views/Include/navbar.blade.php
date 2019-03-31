@@ -39,14 +39,14 @@
                                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programs <b class="caret"></b></a>
                                                             <ul class="dropdown-menu">
 
-                                                                {{-- @include('include.productdropdown') --}}
+                                                                @include('include.productdropdown')
                                                                       
                                                             </ul>
                                             </li>
 
                                             <!-- CONTACT MODAL --> 
-                                            <li><a data-toggle="modal" data-target="#myModal">CONTACT US</a></li>
-
+                                            {{--  <li><a data-toggle="modal" data-target="#myModal">CONTACT US</a></li>  --}}
+                                            <li><a href="#contact">CONTACT US</a></li>
                                            
 
 
