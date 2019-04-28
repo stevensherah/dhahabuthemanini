@@ -85,5 +85,5 @@ Route::get('/product/{product}', 'ProductsfrontendController@getShow');
 Route::resource('admin/events', 'EventsController');
 
 Route::resource('admin/gallery', 'galleryController');
-Route::resource('admin/gallery', 'galleryController');
-Route::resource('admin/gallery', 'galleryController');
+
+Route::resource('/gallery', 'GallariesController');

@@ -75,7 +75,7 @@ class galleryController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show($id) 
     {
         $gallery = gallery::findOrFail($id);
 
@@ -133,5 +133,12 @@ class galleryController extends Controller
         gallery::destroy($id);
 
         return redirect('admin/gallery')->with('flash_message', 'gallery deleted!');
+    }
+    public function getGallery()
+    {
+       
+            $gallery = gallery::latest();
+
+        return view('include.gallery', compact('gallery'));
     }
 }

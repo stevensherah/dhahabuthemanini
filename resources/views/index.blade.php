@@ -223,7 +223,12 @@
 							</div>
 						</section>
 	
-	
+	<section>
+			<div class="section landing-section">
+				@include('include.gallery')
+			</div>
+
+	</section>
 				<div class="section landing-section">
 				<div class="row">
 				    <div class="col-md-8 col-md-offset-2">
