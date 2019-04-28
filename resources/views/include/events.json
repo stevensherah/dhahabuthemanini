@@ -1,47 +1,48 @@
+
 {
+
         "fields": [
             {
                 "name": "title",
                 "type": "string"
             },
             {
-                "name": "subtitle",
-                "type": "string"
-            },            
-            {
-                "name": "content",
-                "type": "text"
-            },
-            {
-                "name": "date",
-                "type": "date"
-            },
-            {
-                "name": "time",
-                "type": "time"
-            },
-            {
-                "name": "Venue",
+                "name": "sub-title",
                 "type": "string"
             },
             {
-                "name": "cover_image",
+                "name": "cover-image",
                 "type": "file"
             },
             {
-                "name": "user_id",
-                "type": "integer#unsigned"
+                "name": "date",
+                "type": "datetime"
             },
             {
-                "name": "programme",
+                "name": "location",
+                "type": "unsigned"
+            },
+            {
+                "name": "poster",
+                "type": "file"
+            },
+            {
+                "name": "body",
+                "type": "textarea"
+            },
+            {
+                "name": "Programme",
                 "type": "select",
                 "options": {
                     "technology": "Technology",
                     "tips": "Tips",
                     "health": "Health"
                 }
+            },
+            {
+                "name": "user_id",
+                "type": "integer#unsigned"
             }
-            
         ],
         "foreign_keys": [
             {
@@ -56,17 +57,12 @@
                 "name": "user",
                 "type": "belongsTo",
                 "class": "App\\User"
-            },
-            {
-                "name": "register",
-                "type": "belongsToMany",
-                "class": "App\\register"
             }
         ],
         "validations": [
             {
                 "field": "title",
-                "rules": "required|max:20"
+                "rules": "required|max:10"
             }
         ]
     }

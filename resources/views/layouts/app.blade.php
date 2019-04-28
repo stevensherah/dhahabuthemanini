@@ -21,6 +21,11 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
   <link  rel="stylesheet" type="text/css" href="{{ URL::to('/')}}/vendor/font-awesome/css/font-awesome.min.css">
+
+  <!-- Include FROALA text Editor style. -->
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
   
 
   <!-- CSS Files -->
@@ -310,7 +315,7 @@
 
       });
     </script>
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    {{--  <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script>
       var options = {
         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -321,6 +326,18 @@
     </script>
     <script>
       CKEDITOR.replace('my-editor', options);
+    </script>  --}}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/js/froala_editor.pkgd.min.js"></script>
+
+    <script>
+      $(function() {
+        $('#my-editor').froalaEditor()
+      });
+    </script>
+    <script>
+        $('.datepicker').datepicker({
+          weekStart:1
+        });
     </script>
 </body>
 

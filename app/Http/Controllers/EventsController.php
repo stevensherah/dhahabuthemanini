@@ -5,39 +5,37 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Product;
+use App\Event;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
-    
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
-
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 20;
+        $perPage = 25;
 
         if (!empty($keyword)) {
-            $products = Product::where('title', 'LIKE', "%$keyword%")
+            $events = Event::where('title', 'LIKE', "%$keyword%")
+                ->orWhere('subtitle', 'LIKE', "%$keyword%")
                 ->orWhere('content', 'LIKE', "%$keyword%")
-                ->orWhere('body', 'LIKE', "%$keyword%")
+                ->orWhere('date', 'LIKE', "%$keyword%")
+                ->orWhere('time', 'LIKE', "%$keyword%")
+                ->orWhere('Venue', 'LIKE', "%$keyword%")
                 ->orWhere('cover_image', 'LIKE', "%$keyword%")
                 ->orWhere('user_id', 'LIKE', "%$keyword%")
+                ->orWhere('programme', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $products = Product::latest()->paginate($perPage);
+            $events = Event::latest()->paginate($perPage);
         }
 
-        return view('products.index', compact('products'));
+        return view('events.events.index', compact('events'));
     }
 
     /**
@@ -47,7 +45,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('events.events.create');
     }
 
     /**
@@ -60,8 +58,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'title' => 'required|max:20',
-			'content' => 'required|max:100'
+			'title' => 'required|max:20'
 		]);
         $requestData = $request->all();
                 if ($request->hasFile('cover_image')) {
@@ -69,9 +66,9 @@ class ProductsController extends Controller
                 ->store('uploads', 'public');
         }
 
-        Product::create($requestData);
+        Event::create($requestData);
 
-        return redirect('admin/products')->with('flash_message', 'Product added!');
+        return redirect('admin/events')->with('flash_message', 'Event added!');
     }
 
     /**
@@ -83,9 +80,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('products.show', compact('product'));
+        return view('events.events.show', compact('event'));
     }
 
     /**
@@ -97,9 +94,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('products.edit', compact('product'));
+        return view('events.events.edit', compact('event'));
     }
 
     /**
@@ -113,8 +110,7 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'title' => 'required|max:20',
-			'content' => 'required|max:100'
+			'title' => 'required|max:20'
 		]);
         $requestData = $request->all();
                 if ($request->hasFile('cover_image')) {
@@ -122,10 +118,10 @@ class ProductsController extends Controller
                 ->store('uploads', 'public');
         }
 
-        $product = Product::findOrFail($id);
-        $product->update($requestData);
+        $event = Event::findOrFail($id);
+        $event->update($requestData);
 
-        return redirect('admin/products')->with('flash_message', 'Product updated!');
+        return redirect('admin/events')->with('flash_message', 'Event updated!');
     }
 
     /**
@@ -137,8 +133,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        Event::destroy($id);
 
-        return redirect('admin/products')->with('flash_message', 'Product deleted!');
+        return redirect('admin/events')->with('flash_message', 'Event deleted!');
     }
 }

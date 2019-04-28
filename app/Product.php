@@ -42,9 +42,13 @@ class Product extends Model
     {
         return $this->belongsTo('App\User');
     }
+    // public function event()
+    // {
+    //     return $this->belongsToMany('App\event');
+    // }
     public function event()
     {
-        return $this->belongsToMany('App\event');
+        return $this->hasMany('App\event');
     }
     public function gallery()
     {
@@ -56,7 +60,20 @@ class Product extends Model
     }
     public function new()
     {
-        return $this->belongsToMany('App\new');
+        return $this->belongsToMany('App\news');
     }
+
+    // Route MOdel binding
+
+    // public static function products()
+    // {
+    //     return static::selectRaw('title');
+    // }
+    // public function getRouteKeyName()
+    // {
+
+    //     return 'title';
+
+    // }
     
 }

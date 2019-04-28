@@ -4,7 +4,7 @@ namespace App\Http\View\Composers;
 
 use Illuminate\View\View;
 
-use App\Products;
+use App\Product;
 
 class NavigationComposer
 {
@@ -16,8 +16,13 @@ class NavigationComposer
         // PASSING OF VARIABLES TO THE VIEW COMPOSER
         public function compose(View $view)
             {
-                // $view->with('name', random_int(0, 1));
-                $view->with('products', \App\Tag::pluck('name'));
+                // testing with an integer value
+                    // $view->with('name', random_int(0, 1));
+                // $view->with('productos', \App\Product::pluck('title'));
+                $products = \App\Product::all();
+
+                $view->with('productos', $products);
+                
 
             }
         

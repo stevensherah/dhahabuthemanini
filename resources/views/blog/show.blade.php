@@ -12,7 +12,15 @@
                                 <div class="row">
                                                 <div class="col-md-8">
                                                 <h1 style="text-transform: uppercase;" class="title">{{$post->title}}</h1>
-                                                <p class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</p>
+                                                <p class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a>Tags: 
+                                                        @if (count($post->tags))
+                                                                @foreach ($post->tags as $tag)
+                                                                <a href="/blog/tags/{{ $tag->name }}">{{ $tag->name }},</a>
+                                                                @endforeach                                                               
+                                                        @else
+                                                        Not tagged        
+                                                        @endif
+                                                         on {{$post->created_at->toFormattedDateString()}}</p>
                                                 </div>
                                                
                                 </div>
@@ -34,11 +42,22 @@
                                                                 
                                                                         <!-- Main Content -->
                                                         <div class="row text-left">                                              
-                                                                <h1 style="margin: -30px 0">{{$post->title}}</h1>
+                                                                <h1 class="offset-1" style="margin: -30px 0">{{$post->title}}</h1>
                                                                 <hr>
                                                                 <section>
-                                                                        <div class="container container post-preview">
-                                                                                <h2 class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</h2>
+                                                                        <div class="post-preview">
+                                                                                <h2 class="post-meta">Posted by <a href="/posts/{{$post->id}}">{{$post->user->name}}</a> Tags: 
+                                                                                        @if (count($post->tags))
+                                                                                                @foreach ($post->tags as $tag)
+                                                                                                <a href="/blog/tags/{{ $tag->name }}">{{ $tag->name }},</a>
+                                                                                                @endforeach                                                               
+                                                                                        @else
+                                                                                        Not tagged        
+                                                                                        @endif
+                                                                                        on {{$post->created_at->toFormattedDateString()}}
+                                                                                
+                                                                                </h2>
+
                                                                                 {{--  <img style="max-width:100%; max-height:100%;" src="/storage/cover_images/{{$post->cover_image}}">  --}}
                                                                                 <hr>
                                                                                 <h3 style="padding:0 50px" class="post-subtitle blog card">

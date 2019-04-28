@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <div class="navbar-wrapper">
         <h2>
-            Dashboard
+            <strong>Dashboard</strong>
             <small>
               
               @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
-                @endif
+              @endif
         
-                You are logged as  <b>{{ Auth::user()->name }}</b> !</small>
+                You are logged in as  <b>{{ Auth::user()->name }}</b> !</small>
                 
           </h2>
       </div>

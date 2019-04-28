@@ -26,7 +26,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $product->id }}</td>
                                     </tr>
-                                    <tr><th> Title </th><td> {{ $product->title }} </td></tr><tr><th> Content </th><td> {{ $product->content }} </td></tr><tr><th> Body </th><td> {{ $product->body }} </td></tr>
+                                    <tr><th> Title </th><td> {{ $product->title }} </td></tr><tr><th> Content </th><td> {{ $product->content }} </td></tr><tr><th> Body </th><td> {!! $product->body !!} </td></tr>
                                 </tbody>
                             </table>
                         </div>

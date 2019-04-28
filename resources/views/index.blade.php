@@ -5,7 +5,7 @@
 	
 
 <div class="wrapper">
-	<div class="header header-filter"  style="text-transform: uppercase;  background-image: url('assets/img/IMG_1140.jpg');">
+	<div class="header header-filter"  style="text-transform: uppercase;  background-image: url('assets/img/bg.jpg');">
 			
 	<div class="container">
 		<div class="row">
@@ -109,96 +109,20 @@
 
 				@include('include.events')
 				
-				<div class="features">
-					<div class="row">
-						<h2 class="title">Our Programs</h2>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-primary">
-									<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">BOYS TO MEN</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-primary">
-									<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">BOYS TO MEN</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-primary">
-									<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">BOYS TO MEN</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-success">
-									<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">GIRLS TO LADIES</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-danger">
-										<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">MORAN PROJECT</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="info">
-								<div class="icon icon-danger">
-										<img style="max-height:200px; display: -webkit-inline-box;" src="assets/img/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
-								</div>
-								<h4 class="info-title">ELIMA PROJECT</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-								<div class="btn btn-info">Veiw</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
+				@include('include.products')
 	
 	
 				</div>
 
 				
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-					    <h2 class="title">"Qoute of the day"</h2>
-					    {{--  @foreach($posts as $post)
-					    <div class="post-preview">
-						    
-						    <h2 class="post-title" style="text-transform: uppercase;">{{ $post->title }}</h2>
-						   
-					    </div>
-					    <hr>
-					    @endforeach  --}}
+				<section class="row">
+					<div class="col-md-12">
+					    <h2 class="title text-center">Latest blog</h2>
+							
+						</div>
 					    
 					</div>
-				</div>
+				</section>
 
 
 
@@ -248,57 +172,56 @@
 	
 					</div>
 					
-				<section>
-					<div class="">
-
-						<!-- Carousel Card -->
-						<div class="card card-raised card-carousel">
-							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-								<div class="carousel slide" data-ride="carousel">
-
-									<!-- Indicators -->
-									<ol class="carousel-indicators">
-										<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-										<li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-									</ol>
-
-									<!-- Wrapper for slides -->
-									<div class="carousel-inner">
-										<div class="item">
-											<img src="assets/img/bg2.jpeg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+					<section class="row">
+							<div class="col-md-8 col-md-offset-2">
+							    <h2 class="title text-center">Gallery</h2>
+							    <div class="card card-raised card-carousel">
+									<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+										<div class="carousel slide" data-ride="carousel">
+		
+											<!-- Indicators -->
+											<ol class="carousel-indicators">
+												<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+												<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+												<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+											</ol>
+		
+											<!-- Wrapper for slides -->
+											<div class="carousel-inner">
+												<div class="item active">
+													<img src="assets/img/bg2.jpeg" alt="Awesome Image">
+													<div class="carousel-caption">
+														<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+													</div>
+												</div>
+												<div class="item">
+													<img src="assets/img/bg3.jpeg" alt="Awesome Image">
+													<div class="carousel-caption">
+														<h4><i class="material-icons">location_on</i> Somewhere Beyond, United States</h4>
+													</div>
+												</div>
+												<div class="item">
+													<img src="assets/img/bg4.jpeg" alt="Awesome Image">
+													<div class="carousel-caption">
+														<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="item active">
-											<img src="assets/img/bg3.jpeg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Somewhere Beyond, United States</h4>
-											</div>
-										</div>
-										<div class="item">
-											<img src="assets/img/bg4.jpeg" alt="Awesome Image">
-											<div class="carousel-caption">
-												<h4><i class="material-icons">location_on</i> Yellowstone National Park, United States</h4>
-											</div>
+		
+		
+											<!-- Controls -->
+											<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+												<i class="material-icons">keyboard_arrow_left</i>
+											</a>
+											<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+												<i class="material-icons">keyboard_arrow_right</i>
+											</a>
 										</div>
 									</div>
-
-									<!-- Controls -->
-									<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-										<i class="material-icons">keyboard_arrow_left</i>
-									</a>
-									<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-										<i class="material-icons">keyboard_arrow_right</i>
-									</a>
 								</div>
+							    
 							</div>
-						</div>
-						<!-- End Carousel Card -->
-
-					</div>
-				</section>
+						</section>
 	
 	
 				<div class="section landing-section">

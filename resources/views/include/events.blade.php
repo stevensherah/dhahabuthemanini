@@ -1,11 +1,5 @@
 <section>
                 <style>
-                                body{
-                                        margin-top:20px;
-                                        background:#eee;
-                                    }
-                                    
-                                    
                                     
                                     .cd-horizontal-timeline ol, .cd-horizontal-timeline ul {
                                       list-style: none;

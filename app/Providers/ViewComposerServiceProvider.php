@@ -13,7 +13,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         View::composer(
                 //
-                '*', 'App\Http\View\Composers\NavigationComposer'
+                ['include.productdropdown', 'include.products'],
+                 'App\Http\View\Composers\NavigationComposer' 
         );
     }
     /**

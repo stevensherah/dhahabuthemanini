@@ -5,70 +5,72 @@
 	
 <div class="wrapper">
 
-<!-- original -->
-<div class="header header-filter"  style="background-image: url('assets/img/bg2.jpeg');">
-				
-        <div class="container">
-                        <div class="row">
-                                        <div class="col-md-8">
-                                        <h1 class="title style="text-transform: uppercase;"">OUR BLOG POST.</h1>
-                                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolorum officia cupiditate ullam perferendis, aperiam exercitationem. Est nam animi blanditiis incidunt illum, veritatis velit officiis, placeat dolorum eveniet numquam quibusdam!</h4>
-                                        <br />
-                                        <a href="#" class="btn btn-info btn-raised btn-lg">VIEW MORE</a>
-                                        </div>
-                        </div>
-        </div>
-</div>
-<!--end of original -->
-
-
-        <div class="main main-raised">
+        <!-- original -->
+        <div class="header header-filter"  style="background-image: url('/storage/{{$product->cover_image}}'); max-height: 100%;">
+                        
                 <div class="container">
-                                <div class="section section-landing row">
-                                
-                                <section class="col-md-9">
-                                        <h1 class="text-center" style="margin: -30px 0;">Other Post</h1>
-                                        <hr>
-                                                @if(count($posts) > 0)
-                                                @foreach($posts as $post)
-                                                <div class="post-preview">
-                                                        
-                                                        <a href="/blog/{{$post->id}}">
-                                                        <h2 class="post-title" style="text-transform: uppercase;">{{$post->title}}</h2>
-                                                        <h3 class="post-subtitle"></h3>
-                                                        </a>
-                                                        <h3 class="post-meta">Posted by <a href="/blog/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</h3>
-                                                        <a href="/blog/{{$post->id}}">
-                                                        <img style="max-width:100%; max-height:100%;" src="{{ URL::to('/')}}/storage/cover_images/{{$post->cover_image}}">                                                     </a>
-
-                                                        <h3 class="blog">
-                                                                {{$post->body}}
-                                                        </h3>
-                                                        
-                                                        <a class="btn btn-info" href="/blog/{{$post->id}}">READ MORE</a>
+                                <div class="row">
+                                                <div class="col-md-8">
+                                                <h1 style="text-transform: uppercase;" class="title">{{ $product->title }}</h1>
+                                                 <p class="post-meta">Posted by <a href="/products/{{$product->id}}">{{$product->user->name}}</a> on {{$product->created_at->toFormattedDateString()}}</p>
+                                                 <hr>
+                                                 <a class="btn btn-gold"  href="#">Activities</a>
                                                 </div>
-                                                <hr>
-                                                @endforeach
-                                                <!-- Pager -->
-                                                <div class="text-center">
-                                                        <ul class="pagination pagination-warninggit ">
-                                                                {{$posts->links()}}
-                                                        </ul>
-                                                </div>
-                                                
-                                                @else
-                                                <p>No posts found</p>
-                                                @endif
-                                        </section>
+                                               
+                                </div>
+                </div>
+        </div>
 
-                                        <section>
-                                                @include('include.sidebar')
-                                        </section>
+
+        <!--end of original -->
+
+
+                <div class="main main-raised">
+                        <div class="container">
+                                <div class="section text-center section-landing">
+
+                                        <!-- BLOG MAIN CONTENT -->
+
+                                        <section>   
+                                                <div class="row">                                                       
+                                                                
+                                                                        <!-- Main Content -->
+                                                        <div class="row text-left">                                              
+                                                                 {{-- <h1 style="margin: -30px 0">{{ $product->title }}</h1> 
+                                                                <hr> --}}
+                                                                <section>
+                                                                        <div class="container container post-preview">
+                                                                                 <h2 class="post-meta">Posted by <a href="/products/{{$product->id}}">{{$product->user->name}}</a> on {{$product->created_at->toFormattedDateString()}}</h2>
+                                                                                 {{-- <img style="max-width:100%; max-height:100%;" src="/storage/{{$product->cover_image}}"> --}}
+                                                                                <hr>
+                                                                                <h3 style="padding:0 50px" class="post-subtitle blog card">
+                                                                                        {!! $product->body !!}
+                                                                                </h3>
+                                                                        </div>
+                                                                        <hr>
+                                                                         @include('include.eventsection') 
+                                                                         {{-- @include('include.gallery') 
+                                                                         @include('include.testimonials') 
+                                                                         @include('include.news')  --}}
+
+                                                                
+                                                                </section>                                                               
+                                                               
+                                                                </div>
+                                                        </div>
+                                                </div>     
+                                                                        
+             
+                                                </section>
+
+                                        <!-- BLOG MAIN CONTENT -->
+
+
                                 </div>
 
-                @include('include.contactsection')
-                </div>
+                        @include('include.contactsection')
+                        </div>
 
-        </div>
+                </div>
 
 @endsection

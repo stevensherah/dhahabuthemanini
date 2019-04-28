@@ -41,18 +41,6 @@
           <p>File Manager</p>
         </a>
       </li>
-        <li class="dropdown nav-item" class=" {{ Request::is('/') ? 'active' : '' }}">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="material-icons">person</i>
-              <p>Programs<b class="caret"></b></p></a>
-            <ul class="dropdown-menu">
-                      <li><a href="{{ url('#') }}">BOYS TO MEN</a></li>
-                      <li><a href="{{ url('#') }}">GIRLS TO LADIES</a></li>
-                      <li><a href="{{ url('#') }}">MORAN PROJECT</a></li>
-                      <li><a href="{{ url('#') }}">ElIMA PROJECT</a></li>
-                      <li><a href="{{ url('#') }}">MORAN PROJECT</a></li>
-            </ul>
-      </li>
       <li class="nav-item" class=" {{ Request::is('/subscribers') ? 'active' : '' }}">
           <a class="nav-link" href="{{ url('/subscribers') }}">
             <i class="material-icons">crowd</i>

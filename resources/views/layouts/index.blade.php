@@ -88,5 +88,6 @@
 	<script>
 	  CKEDITOR.replace('my-editor', options);
 	</script>
+	<script src="{{ URL::to('/')}}/assets/js/gallery-portfolio.js" type="text/javascript"></script>
 
 </html>

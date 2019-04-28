@@ -6,19 +6,28 @@
 <div class="wrapper">
 
 <!-- original -->
-<div class="header header-filter"  style="background-image: url('assets/img/bg2.jpeg');">
-				
+
+@if(count($posts) > 0)
+@foreach($posts->take(1) as $header)
+{{-- <div class="header header-filter"  style="background-image: url('assets/img/{{$post->cover_image}}');"> --}}
+        <div class="header header-filter"  style="background-image: url('/storage/cover_images/{{$header->cover_image}}');">
+
         <div class="container">
                         <div class="row">
-                                        <div class="col-md-8">
-                                        <h1 class="title style="text-transform: uppercase;"">OUR BLOG POST.</h1>
-                                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolorum officia cupiditate ullam perferendis, aperiam exercitationem. Est nam animi blanditiis incidunt illum, veritatis velit officiis, placeat dolorum eveniet numquam quibusdam!</h4>
-                                        <br />
-                                        <a href="#" class="btn btn-info btn-raised btn-lg">VIEW MORE</a>
-                                        </div>
+                                <div class="col-md-8">
+                                <h1 class="title" style="text-transform: uppercase;">{{$header->title}}.</h1>
+                                <h4>{!! str_limit($header->body, 200) !!}</h4>
+                                <hr />
+                                <a class="btn btn-info btn-raised btn-lg" href="/blog/{{$header->id}}">READ MORE</a>
+
+                                </div>
                         </div>
         </div>
 </div>
+@endforeach
+@else
+<p>No posts found</p>
+@endif
 <!--end of original -->
 
 
@@ -37,7 +46,15 @@
                                                         <h2 class="post-title" style="text-transform: uppercase;">{{$post->title}}</h2>
                                                         <h3 class="post-subtitle"></h3>
                                                         </a>
-                                                        <h3 class="post-meta">Posted by <a href="/blog/{{$post->id}}">{{$post->user->name}}</a> on {{$post->created_at->toFormattedDateString()}}</h3>
+                                                        <h3 class="post-meta">Posted by <a href="/blog/{{$post->id}}">{{$post->user->name}}</a> Tags: 
+                                                                @if (count($post->tags))
+                                                                        @foreach ($post->tags as $tag)
+                                                                        <a href="/blog/tags/{{ $tag->name }}">{{ $tag->name }},</a>
+                                                                        @endforeach                                                               
+                                                                @else
+                                                                Not tagged        
+                                                                @endif
+                                                        on {{$post->created_at->toFormattedDateString()}}</h3>
                                                         <a href="/blog/{{$post->id}}">
                                                         <img style="max-width:100%; max-height:100%;" src="{{ URL::to('/')}}/storage/cover_images/{{$post->cover_image}}">                                                     </a>
 

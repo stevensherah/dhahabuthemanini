@@ -1,16 +1,13 @@
-{{--  
-@foreach($products as $item)
-        <li style="text-transform: uppercase;"><a  href="#">{{ $item->title }}</a></li>  
+{{-- @if(count(App\Product::all()) > 0)
+@foreach (App\Product::all() as $product)
+        <li style="text-transform: uppercase;"><a href="/product/{{$product}}"> --}}
 
-                
-@endforeach  --}}
-
-@if(count($products) > 0)
-@foreach ($products as $product)
-        <li><a href="#">
-                 {{ $product  }}
+@if(count($productos) > 0)
+@foreach ($productos as $product)
+        <li style="text-transform: uppercase;"><a href="/product/{{$product->id}}">
+                        {{ $product->title  }}
         </a></li>
 @endforeach
 @else
-<p>No Tags found</p>
+<p>No Programs found</p>
 @endif

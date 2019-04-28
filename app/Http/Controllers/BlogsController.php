@@ -56,7 +56,7 @@ class BlogsController extends Controller
 
         // return view('blog.blog')->with('posts', $posts);
 
-        return view('blog.blog')->with('posts', $posts);
+        return view('blog.index')->with('posts', $posts);
 
     }
 
@@ -66,7 +66,7 @@ class BlogsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('blog.post')->with('post', $post);
+        return view('blog.show')->with('post', $post);
     }
     public function addComment(Post $post)
     {

@@ -21,17 +21,25 @@ Route::GET('/about', 'PagesController@getAbout');
 // Route::GET('/blog', 'PagesController@getBlog');
 // Route::GET('/blog-post', 'PagesController@getBlogpost');
 
-Route::resource('blog', 'BlogsController');
 
-// Add Comment to a post
-Route::post('/comment/store', 'CommentController@store')->name('comment.add'); 
+//BLOGS ROUTES
 
-
-// Reply to a Comment of a post
-Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+        Route::resource('posts', 'PostsController');
 
 
-Route::get('/blog/tags/{tag}', 'TagsController@index');
+        Route::resource('blog', 'BlogsController');
+
+        // Add Comment to a post
+        Route::post('/comment/store', 'CommentController@store')->name('comment.add'); 
+
+
+        // Reply to a Comment of a post
+        Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
+
+        Route::get('/blog/tags/{tag}', 'TagsController@index');
+
+//BLOGS ROUTES
 
 
 // POSTS
@@ -48,7 +56,6 @@ Route::POST('/', 'SubscribeController@store');
 Route::post('/submit', 'MessagesController@submit');
 
 
-Route::resource('posts', 'PostsController');
 
 
 Auth::routes();
@@ -71,3 +78,12 @@ Route::resource('admin/blogs', 'Admin\\blogsController');
 
 
 Route::resource('admin/products', 'ProductsController');
+
+Route::get('/product/{product}', 'ProductsfrontendController@getShow');
+
+
+Route::resource('admin/events', 'EventsController');
+
+Route::resource('admin/gallery', 'galleryController');
+Route::resource('admin/gallery', 'galleryController');
+Route::resource('admin/gallery', 'galleryController');

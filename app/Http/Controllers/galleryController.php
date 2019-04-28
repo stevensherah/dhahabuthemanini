@@ -5,39 +5,34 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Product;
+use App\gallery;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class galleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
-    
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
-
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 20;
+        $perPage = 25;
 
         if (!empty($keyword)) {
-            $products = Product::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('content', 'LIKE', "%$keyword%")
+            $gallery = gallery::where('title', 'LIKE', "%$keyword%")
+                ->orWhere('subtitle', 'LIKE', "%$keyword%")
                 ->orWhere('body', 'LIKE', "%$keyword%")
                 ->orWhere('cover_image', 'LIKE', "%$keyword%")
                 ->orWhere('user_id', 'LIKE', "%$keyword%")
+                ->orWhere('product_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $products = Product::latest()->paginate($perPage);
+            $gallery = gallery::latest()->paginate($perPage);
         }
 
-        return view('products.index', compact('products'));
+        return view('gallery.index', compact('gallery'));
     }
 
     /**
@@ -47,7 +42,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('gallery.create');
     }
 
     /**
@@ -60,8 +55,7 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'title' => 'required|max:20',
-			'content' => 'required|max:100'
+			'title' => 'required|max:20'
 		]);
         $requestData = $request->all();
                 if ($request->hasFile('cover_image')) {
@@ -69,9 +63,9 @@ class ProductsController extends Controller
                 ->store('uploads', 'public');
         }
 
-        Product::create($requestData);
+        gallery::create($requestData);
 
-        return redirect('admin/products')->with('flash_message', 'Product added!');
+        return redirect('admin/gallery')->with('flash_message', 'gallery added!');
     }
 
     /**
@@ -83,9 +77,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        $gallery = gallery::findOrFail($id);
 
-        return view('products.show', compact('product'));
+        return view('gallery.show', compact('gallery'));
     }
 
     /**
@@ -97,9 +91,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $gallery = gallery::findOrFail($id);
 
-        return view('products.edit', compact('product'));
+        return view('gallery.edit', compact('gallery'));
     }
 
     /**
@@ -113,8 +107,7 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'title' => 'required|max:20',
-			'content' => 'required|max:100'
+			'title' => 'required|max:20'
 		]);
         $requestData = $request->all();
                 if ($request->hasFile('cover_image')) {
@@ -122,10 +115,10 @@ class ProductsController extends Controller
                 ->store('uploads', 'public');
         }
 
-        $product = Product::findOrFail($id);
-        $product->update($requestData);
+        $gallery = gallery::findOrFail($id);
+        $gallery->update($requestData);
 
-        return redirect('admin/products')->with('flash_message', 'Product updated!');
+        return redirect('admin/gallery')->with('flash_message', 'gallery updated!');
     }
 
     /**
@@ -137,8 +130,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        gallery::destroy($id);
 
-        return redirect('admin/products')->with('flash_message', 'Product deleted!');
+        return redirect('admin/gallery')->with('flash_message', 'gallery deleted!');
     }
 }

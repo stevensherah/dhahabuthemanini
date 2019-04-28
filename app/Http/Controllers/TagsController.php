@@ -4,24 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\post;
-
 use App\Tag;
+
+use App\Post;
 
 class TagsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index(Tag $tag)
     {
         //
+        
+       
+        $posts = $tag->posts;
 
-        $post = $tag->$post;
-
-        return view('blog.blog', compact('posts'));
+        return view('blog.tags', compact('posts'));
 
         
     }
