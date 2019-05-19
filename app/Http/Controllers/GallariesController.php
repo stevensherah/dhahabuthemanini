@@ -13,24 +13,30 @@ class GallariesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $keyword = $request->get('search');
-        $perPage = 25;
+    // public function index(Request $request)
+    // {
+    //     $keyword = $request->get('search');
+    //     $perPage = 25;
 
-        if (!empty($keyword)) {
-            $gallery = gallery::where('title', 'LIKE', "%$keyword%")
-                ->orWhere('subtitle', 'LIKE', "%$keyword%")
-                ->orWhere('body', 'LIKE', "%$keyword%")
-                ->orWhere('cover_image', 'LIKE', "%$keyword%")
-                ->orWhere('user_id', 'LIKE', "%$keyword%")
-                ->orWhere('product_id', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
-        } else {
-            $gallery = gallery::latest()->paginate($perPage);
+    //     if (!empty($keyword)) {
+    //         $gallery = gallery::where('title', 'LIKE', "%$keyword%")
+    //             ->orWhere('subtitle', 'LIKE', "%$keyword%")
+    //             ->orWhere('body', 'LIKE', "%$keyword%")
+    //             ->orWhere('cover_image', 'LIKE', "%$keyword%")
+    //             ->orWhere('user_id', 'LIKE', "%$keyword%")
+    //             ->orWhere('product_id', 'LIKE', "%$keyword%")
+    //             ->latest()->paginate($perPage);
+    //     } else {
+    //         $gallery = gallery::latest()->paginate($perPage);
+    //     }
+    //     return view('gallery', compact('gallery'));
+    // }
+        public function index()
+        {
+                return view('gallery', compact('gallaries'));
+
         }
-        return view('gallery', compact('gallery'));
-    }
+
 
     /**
      * Show the form for creating a new resource.

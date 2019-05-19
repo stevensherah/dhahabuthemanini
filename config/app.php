@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\galleryComposerServiceProvider::class,
 
     ],
 
